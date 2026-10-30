@@ -1,0 +1,100 @@
+/**
+ * GoodAgain — Design System Tokens (css/tokens.css)
+ * Approved Direction: Proposal B ("Warm Everyday Outlet") + Original GoodAgain Brand Identity
+ * Primary Brand Color: Forest Green (#234B3B) & Warm Moss (#2B5845)
+ * Neutral Anchor: Deep Charcoal (#252A27) & Sandstone Cream (#FAF6F0 / #F7F7F2)
+ */
+
+/* ── Google Fonts ── loaded here so every page gets them via tokens.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+:root {
+  /* Core Brand Palette (WCAG 2.2 AA Contrast Verified) */
+  --ga-forest: #234B3B;          /* Primary brand anchor (Contrast on #FAF6F0: 8.9:1) */
+  --ga-forest-hover: #1A3A2D;    /* Darker hover state (Contrast on #FFFFFF: 11.8:1) */
+  --ga-forest-deep: #142D23;     /* Deep footer & badge contrast anchor */
+  --ga-moss: #2B5845;            /* Proposal B secondary warm moss green */
+  --ga-charcoal: #252A27;        /* Primary body & heading ink (Contrast on #FAF6F0: 13.4:1) */
+  --ga-slate: #434B46;           /* Secondary body text (Contrast on #FAF6F0: 8.1:1) */
+  --ga-muted-ink: #56605A;       /* Captions & metadata ink (Contrast on #FAF6F0: 5.8:1) */
+
+  /* Warm Everyday Outlet Surfaces (Proposal B) */
+  --ga-cream: #FAF6F0;           /* Primary page background (Sandstone Cream) */
+  --ga-offwhite: #F7F7F2;        /* Business plan warm off-white surface */
+  --ga-oatmeal: #F2ECE1;         /* Proposal B soft card & section surface */
+  --ga-oatmeal-deep: #E6DEC8;    /* Emphasized warm container surface */
+  --ga-white: #FFFFFF;           /* Crisp elevated card & input background */
+  --ga-gray-soft: #E8ECE8;       /* Soft neutral gray divider/surface */
+  --ga-green-muted: #DCE8DD;     /* Muted green tint for badges & callouts */
+  --ga-olive-soft: #E2EBDD;      /* Soft olive highlight surface */
+
+  /* Accents & Semantic Condition / Status Colors */
+  --ga-lime: #C9E56B;            /* Accent lime highlight (Used with dark #142D23 ink: 10.6:1) */
+  --ga-terracotta: #B8563A;      /* Proposal B warm terracotta accent (Contrast on #FFFFFF: 4.8:1) */
+  --ga-terracotta-bg: #FCEEE9;   /* Soft terracotta tint surface */
+
+  /* Condition Grade Semantic Tokens (Always paired with Symbols + Text) */
+  --ga-grade-a-bg: #E2F0E6;
+  --ga-grade-a-ink: #1B4332;
+  --ga-grade-a-border: #234B3B;
+
+  --ga-grade-b-bg: #FDF4E3;
+  --ga-grade-b-ink: #6E440C;
+  --ga-grade-b-border: #B5761E;
+
+  --ga-grade-c-bg: #FBECE6;
+  --ga-grade-c-ink: #7A3216;
+  --ga-grade-c-border: #B8563A;
+
+  /* Status & Validation Tokens */
+  --ga-success-bg: #E2F0E6;
+  --ga-success-ink: #1B4332;
+  --ga-warning-bg: #FDF4E3;
+  --ga-warning-ink: #6E440C;
+  --ga-danger-bg: #FDECEC;
+  --ga-danger-ink: #8C1D24;
+  --ga-danger-border: #C93B42;
+
+  /* Borders & Shadows */
+  --ga-border: #DED6C6;
+  --ga-border-strong: #C4B9A5;
+  --ga-shadow-sm: 0 2px 8px rgba(37, 42, 39, 0.05);
+  --ga-shadow-md: 0 8px 24px rgba(37, 42, 39, 0.08);
+  --ga-shadow-lg: 0 16px 40px rgba(37, 42, 39, 0.12);
+  --ga-focus-ring: 0 0 0 3px rgba(35, 75, 59, 0.35);
+
+  /* Typography Scale & Families */
+  --ga-font-display: 'Outfit', 'Aptos Display', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ga-font-sans: 'Public Sans', 'Aptos', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ga-font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  --ga-text-xs: 0.78rem;     /* ~12.5px */
+  --ga-text-sm: 0.885rem;    /* ~14.2px */
+  --ga-text-base: 1rem;      /* 16px */
+  --ga-text-md: 1.125rem;    /* 18px */
+  --ga-text-lg: 1.25rem;     /* 20px */
+  --ga-text-xl: 1.5rem;      /* 24px */
+  --ga-text-2xl: 1.875rem;   /* 30px */
+  --ga-text-3xl: 2.35rem;    /* 37.6px */
+  --ga-text-4xl: 2.85rem;    /* 45.6px */
+
+  /* Spacing & Layout Radii (Proposal B Soft Rounded System) */
+  --ga-space-1: 0.25rem;
+  --ga-space-2: 0.5rem;
+  --ga-space-3: 0.75rem;
+  --ga-space-4: 1rem;
+  --ga-space-5: 1.25rem;
+  --ga-space-6: 1.5rem;
+  --ga-space-8: 2rem;
+  --ga-space-10: 2.5rem;
+  --ga-space-12: 3rem;
+  --ga-space-16: 4rem;
+
+  --ga-radius-sm: 8px;
+  --ga-radius-md: 12px;
+  --ga-radius-lg: 16px;
+  --ga-radius-xl: 24px;
+  --ga-radius-pill: 9999px;
+
+  --ga-container-max: 1280px;
+  --ga-transition: 180ms cubic-bezier(0.2, 0, 0, 1);
+}

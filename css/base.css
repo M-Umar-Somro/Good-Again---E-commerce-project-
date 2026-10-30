@@ -1,0 +1,186 @@
+/**
+ * GoodAgain — Base Reset, Typography & Accessibility Foundations (css/base.css)
+ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--ga-font-sans);
+  font-size: var(--ga-text-base);
+  line-height: 1.6;
+  color: var(--ga-charcoal);
+  background-color: var(--ga-cream);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+img, svg, picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Typographic Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ga-font-display);
+  color: var(--ga-charcoal);
+  line-height: 1.22;
+  letter-spacing: -0.015em;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: clamp(1.9rem, 3.5vw, var(--ga-text-4xl));
+  margin-bottom: var(--ga-space-4);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2.6vw, var(--ga-text-2xl));
+  margin-bottom: var(--ga-space-3);
+}
+
+h3 {
+  font-size: clamp(1.2rem, 2vw, var(--ga-text-xl));
+  margin-bottom: var(--ga-space-2);
+}
+
+h4 {
+  font-size: var(--ga-text-lg);
+  margin-bottom: var(--ga-space-2);
+}
+
+p {
+  margin-bottom: var(--ga-space-4);
+  color: var(--ga-slate);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--ga-forest);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--ga-transition);
+}
+
+a:hover {
+  color: var(--ga-forest-hover);
+}
+
+ul, ol {
+  padding-left: var(--ga-space-5);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Keyboard Focus Visibility (WCAG 2.2 AA) */
+:focus-visible {
+  outline: 3px solid var(--ga-forest);
+  outline-offset: 2px;
+  box-shadow: var(--ga-focus-ring);
+}
+
+/* Skip to Content Link */
+.ga-skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--ga-space-4);
+  background: var(--ga-forest);
+  color: var(--ga-white);
+  padding: var(--ga-space-3) var(--ga-space-5);
+  border-radius: var(--ga-radius-md);
+  font-weight: 700;
+  z-index: 9999;
+  text-decoration: none;
+  transition: top var(--ga-transition);
+}
+
+.ga-skip-link:focus {
+  top: var(--ga-space-3);
+  color: var(--ga-white);
+}
+
+/* Screen-reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Layout Containers */
+.ga-container {
+  width: 100%;
+  max-width: var(--ga-container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--ga-space-4);
+  padding-right: var(--ga-space-4);
+}
+
+.ga-section {
+  padding-top: var(--ga-space-12);
+  padding-bottom: var(--ga-space-12);
+}
+
+.ga-section--oatmeal {
+  background-color: var(--ga-oatmeal);
+  border-top: 1px solid var(--ga-border);
+  border-bottom: 1px solid var(--ga-border);
+}
+
+.ga-section--forest {
+  background-color: var(--ga-forest);
+  color: var(--ga-white);
+}
+
+.ga-section--forest h2,
+.ga-section--forest h3,
+.ga-section--forest p {
+  color: var(--ga-white);
+}
+
+/* Tabular Numbers for Prices & SKUs */
+.ga-price-num, .ga-mono {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

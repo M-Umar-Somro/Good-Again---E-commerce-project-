@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Support & Bulk Office/Hostel Inquiries | GoodAgain</title>
+  <meta name="description" content="Get in touch with GoodAgain for pre-purchase condition questions, post-delivery support, or bulk student hostel and small office bundles in Islamabad.">
+  <!-- WordPress conversion: enqueue stylesheets via wp_enqueue_style() in functions.php -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <a href="#main-content" class="ga-skip-link">Skip to main content</a>
+
+  <!-- WordPress conversion: replace with header.php (get_header()) -->
+  <header id="ga-site-header" class="ga-header">
+    <div class="ga-announcement" role="region" aria-label="Store announcement">
+      <div class="ga-container ga-announcement__inner">
+        <div>
+          <span class="ga-announcement__badge">GoodAgain</span>
+          <span>Verified surplus, open-box and everyday essentials - honest prices in Islamabad.</span>
+        </div>
+        <ul class="ga-announcement__links">
+          <li><a href="shop.html">Shop now</a></li>
+          <li><a href="condition-guide.html">Condition guide</a></li>
+          <li><a href="contact.html">Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ga-container ga-header__main">
+      <a href="index.html" class="ga-brand" aria-label="GoodAgain Home - Verified surplus. Honest value.">
+        <img src="assets/images/brand/goodagain-logo-transparent.webp" alt="GoodAgain logo" class="ga-brand__logo" width="180" height="44">
+        <span class="ga-brand__tagline">Verified surplus. Honest value.</span>
+      </a>
+      <div class="ga-header-search" role="search">
+        <form class="ga-header-search__form" id="ga-header-search-form" action="shop.html" method="get">
+          <label for="ga-global-search-input" class="sr-only">Search GoodAgain products</label>
+          <input type="search" id="ga-global-search-input" name="q" class="ga-header-search__input" placeholder="Search home, office, kitchen &amp; tech" autocomplete="off">
+          <button type="submit" class="ga-header-search__btn">Search</button>
+        </form>
+        <div id="ga-search-suggestions" class="ga-search-suggestions" hidden aria-live="polite"></div>
+      </div>
+      <div class="ga-header__actions">
+        <a href="wishlist.html" class="ga-action-pill" aria-label="Saved Wishlist items">
+          <span class="ga-action-pill__label">Saved</span>
+          <span class="ga-badge-count" data-ga-wishlist-count>0</span>
+        </a>
+        <a href="cart.html" class="ga-action-pill ga-action-pill--cart" aria-label="Shopping Cart">
+          <span class="ga-action-pill__label">Cart</span>
+          <span class="ga-badge-count" data-ga-cart-count>0</span>
+        </a>
+        <a href="my-account.html" class="ga-action-pill" aria-label="Customer Account">
+          <span class="ga-action-pill__label">Account</span>
+        </a>
+        <button type="button" class="ga-menu-toggle" id="ga-mobile-menu-btn" aria-expanded="false" aria-controls="ga-primary-nav">
+          Menu
+        </button>
+      </div>
+    </div>
+    <nav class="ga-nav-bar" id="ga-primary-nav" aria-label="Primary navigation">
+      <div class="ga-container ga-nav-bar__inner">
+        <ul class="ga-nav-list">
+          <li><a href="index.html" class="ga-nav-link">Home</a></li>
+          <li><a href="shop.html" class="ga-nav-link">Shop</a></li>
+          <li><a href="shop.html" class="ga-nav-link">Best Sellers</a></li>
+          <li><a href="how-we-check.html" class="ga-nav-link">How it Works</a></li>
+          <li><a href="condition-guide.html" class="ga-nav-link ga-nav-link--highlight">Condition Guide</a></li>
+          <li><a href="about.html" class="ga-nav-link">About</a></li>
+          <li><a href="contact.html" class="ga-nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- WordPress conversion: maps to page-contact.php or page.php -->
+    <section class="ga-page-hero">
+      <div class="ga-container">
+        <nav class="ga-breadcrumbs" aria-label="Breadcrumb">
+          <ol><li><a href="index.html">Home</a></li><li aria-current="page">Contact &amp; Support</li></ol>
+        </nav>
+        <h1>Contact GoodAgain</h1>
+        <p style="max-width:760px;margin:0;">
+          Have a question about a product’s condition grade, an Islamabad delivery estimate, a bulk hostel or office bundle, or a supplier clearance batch? Send us a message and we’ll help.
+        </p>
+      </div>
+    </section>
+
+    <section class="ga-section">
+      <div class="ga-container">
+        <div class="ga-cart-layout">
+          <!-- Contact Form with Inline Validation -->
+          <div style="background:var(--ga-white);border:1.5px solid var(--ga-border);border-radius:var(--ga-radius-xl);padding:2rem;">
+            <h2>Send a message</h2>
+            <p style="font-size:0.88rem;color:var(--ga-muted-ink);margin-bottom:1.25rem;">
+              Tell us what you need. We can help with condition questions, delivery details, or bulk office and hostel orders.
+            </p>
+
+            <div id="ga-contact-form-status" aria-live="polite"></div>
+
+            <form id="ga-contact-form" novalidate>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <div class="ga-form-group">
+                  <label for="ga-contact-name" class="ga-label">Full Name <span class="ga-required">*</span></label>
+                  <input type="text" id="ga-contact-name" class="ga-input" placeholder="e.g., Ahmed Khan" required>
+                  <span class="ga-field-error"></span>
+                </div>
+                <div class="ga-form-group">
+                  <label for="ga-contact-email" class="ga-label">Email Address <span class="ga-required">*</span></label>
+                  <input type="email" id="ga-contact-email" class="ga-input" placeholder="you@example.com" required>
+                  <span class="ga-field-error"></span>
+                </div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <div class="ga-form-group">
+                  <label for="ga-contact-phone" class="ga-label">Phone / WhatsApp Number (Optional)</label>
+                  <input type="tel" id="ga-contact-phone" class="ga-input" placeholder="03XX-XXXXXXX" data-validate-phone="true">
+                  <span class="ga-field-error"></span>
+                </div>
+                <div class="ga-form-group">
+                  <label for="ga-contact-topic" class="ga-label">Message Topic <span class="ga-required">*</span></label>
+                  <select id="ga-contact-topic" class="ga-select" required>
+                    <option value="">Select a topic...</option>
+                    <option value="Pre-Purchase Condition Question">Pre-Purchase Condition / Accessory Question</option>
+                    <option value="Order & Delivery Support">Order &amp; Islamabad Delivery Support</option>
+                    <option value="Return or Discrepancy Report">Return or Post-Delivery Issue Report</option>
+                    <option value="Bulk Office / Hostel / Society Inquiry">Bulk Office / Hostel / Student Society Bundle</option>
+                    <option value="Supplier Surplus / Consignment Offer">Supplier Surplus or Consignment Inquiry</option>
+                  </select>
+                  <span class="ga-field-error"></span>
+                </div>
+              </div>
+
+              <div class="ga-form-group">
+                <label for="ga-contact-sku" class="ga-label">Related Product SKU or Order Reference (Optional)</label>
+                <input type="text" id="ga-contact-sku" class="ga-input" placeholder="e.g., GA-TECH-001-A or Order #">
+              </div>
+
+              <div class="ga-form-group">
+                <label for="ga-contact-message" class="ga-label">Your Message <span class="ga-required">*</span></label>
+                <textarea id="ga-contact-message" class="ga-textarea" rows="5" placeholder="Tell us what condition detail, accessory check, or bundle quantity you need help with..." required></textarea>
+                <span class="ga-field-error"></span>
+              </div>
+
+              <button type="submit" class="ga-btn ga-btn--primary">Validate &amp; Submit Demo Message</button>
+            </form>
+          </div>
+
+          <!-- Contact Information & Configurable Placeholders -->
+          <aside class="ga-summary-card">
+            <span class="ga-demo-pill" style="margin-bottom:8px;">Unconfirmed Details Logged in CONTENT-TODO.md</span>
+            <h2 style="font-size:1.25rem;">Contact Channels (Pending Final Details)</h2>
+            <p style="font-size:0.86rem;">
+              In accordance with project guidelines, no fictional phone numbers, email addresses, or physical street addresses have been invented. The placeholders below show where confirmed Islamabad contact details will be inserted before launch:
+            </p>
+
+            <div style="background:var(--ga-oatmeal);border-radius:12px;padding:12px;margin-bottom:10px;font-size:0.85rem;">
+              <strong>📍 Planned Launch Market:</strong><br>
+              Islamabad Capital Territory, Pakistan<br>
+              <span style="color:var(--ga-muted-ink);font-size:0.78rem;">(Exact dispatch/office address to be confirmed by business owner prior to publication)</span>
+            </div>
+
+            <div style="background:var(--ga-oatmeal);border-radius:12px;padding:12px;margin-bottom:10px;font-size:0.85rem;">
+              <strong>✉️ Customer Support Email:</strong><br>
+              <code>[To be configured: e.g., support@goodagain.store]</code>
+            </div>
+
+            <div style="background:var(--ga-oatmeal);border-radius:12px;padding:12px;margin-bottom:14px;font-size:0.85rem;">
+              <strong>💬 WhatsApp Business Support:</strong><br>
+              <span>Planned primary channel for quick condition photo requests and order updates in Islamabad.</span>
+              <div style="margin-top:8px;">
+                <a href="#ga-contact-form" class="ga-btn ga-btn--secondary ga-btn--sm" title="Configurable WhatsApp Business destination placeholder">Configure WhatsApp Business Link (Pending Number)</a>
+              </div>
+            </div>
+
+            <div style="border-top:1px solid var(--ga-border);padding-top:12px;font-size:0.82rem;color:var(--ga-slate);">
+              <strong>Need policy details first?</strong><br>
+              Review our <a href="condition-guide.html">Draft Condition Guide</a>, <a href="shipping-returns.html">Delivery &amp; Returns Framework</a>, or <a href="faq.html">Frequently Asked Questions</a>.
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- WordPress conversion: replace with footer.php (get_footer()) -->
+  <footer id="ga-site-footer" class="ga-footer"></footer>
+
+  <!-- WordPress conversion: enqueue scripts via wp_enqueue_script() in functions.php -->
+  <script src="data/products.js"></script>
+  <script src="js/partials.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop 25 Checked Surplus & Open-Box Finds | GoodAgain Prototype</title>
+  <meta name="description" content="Filter GoodAgain's 25 demonstration surplus, overstock, and open-box products by category, draft condition grade (A, B, C), source type, and PKR price.">
+  <!-- WordPress conversion: enqueue stylesheets via wp_enqueue_style() in functions.php -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <a href="#main-content" class="ga-skip-link">Skip to main content</a>
+
+  <!-- WordPress conversion: replace with header.php (get_header()) -->
+  <header id="ga-site-header" class="ga-header">
+    <div class="ga-announcement" role="region" aria-label="Store announcement">
+      <div class="ga-container ga-announcement__inner">
+        <div>
+          <span class="ga-announcement__badge">GoodAgain</span>
+          <span>Verified surplus, open-box and everyday essentials - honest prices in Islamabad.</span>
+        </div>
+        <ul class="ga-announcement__links">
+          <li><a href="shop.html">Shop now</a></li>
+          <li><a href="condition-guide.html">Condition guide</a></li>
+          <li><a href="contact.html">Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ga-container ga-header__main">
+      <a href="index.html" class="ga-brand" aria-label="GoodAgain Home - Verified surplus. Honest value.">
+        <img src="assets/images/brand/goodagain-logo-transparent.webp" alt="GoodAgain logo" class="ga-brand__logo" width="180" height="44">
+        <span class="ga-brand__tagline">Verified surplus. Honest value.</span>
+      </a>
+      <div class="ga-header-search" role="search">
+        <form class="ga-header-search__form" id="ga-header-search-form" action="shop.html" method="get">
+          <label for="ga-global-search-input" class="sr-only">Search GoodAgain products</label>
+          <input type="search" id="ga-global-search-input" name="q" class="ga-header-search__input" placeholder="Search home, office, kitchen &amp; tech" autocomplete="off">
+          <button type="submit" class="ga-header-search__btn">Search</button>
+        </form>
+        <div id="ga-search-suggestions" class="ga-search-suggestions" hidden aria-live="polite"></div>
+      </div>
+      <div class="ga-header__actions">
+        <a href="wishlist.html" class="ga-action-pill" aria-label="Saved Wishlist items">
+          <span class="ga-action-pill__label">Saved</span>
+          <span class="ga-badge-count" data-ga-wishlist-count>0</span>
+        </a>
+        <a href="cart.html" class="ga-action-pill ga-action-pill--cart" aria-label="Shopping Cart">
+          <span class="ga-action-pill__label">Cart</span>
+          <span class="ga-badge-count" data-ga-cart-count>0</span>
+        </a>
+        <a href="my-account.html" class="ga-action-pill" aria-label="Customer Account">
+          <span class="ga-action-pill__label">Account</span>
+        </a>
+        <button type="button" class="ga-menu-toggle" id="ga-mobile-menu-btn" aria-expanded="false" aria-controls="ga-primary-nav">
+          Menu
+        </button>
+      </div>
+    </div>
+    <nav class="ga-nav-bar" id="ga-primary-nav" aria-label="Primary navigation">
+      <div class="ga-container ga-nav-bar__inner">
+        <ul class="ga-nav-list">
+          <li><a href="index.html" class="ga-nav-link">Home</a></li>
+          <li><a href="shop.html" class="ga-nav-link">Shop</a></li>
+          <li><a href="shop.html" class="ga-nav-link">Best Sellers</a></li>
+          <li><a href="how-we-check.html" class="ga-nav-link">How it Works</a></li>
+          <li><a href="condition-guide.html" class="ga-nav-link ga-nav-link--highlight">Condition Guide</a></li>
+          <li><a href="about.html" class="ga-nav-link">About</a></li>
+          <li><a href="contact.html" class="ga-nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- WordPress conversion: maps to archive-product.php -->
+    <section class="ga-page-hero">
+      <div class="ga-container">
+        <nav class="ga-breadcrumbs" aria-label="Breadcrumb">
+          <ol><li><a href="index.html">Home</a></li><li aria-current="page">Shop Checked Finds (Demo Catalog)</li></ol>
+        </nav>
+        <h1>Shop Checked Surplus &amp; Open-Box Finds</h1>
+        <p style="max-width:760px;margin:0;">
+          Browse all 25 illustrative demonstration listings across our five launch categories. Filter by category, draft condition grade (A, B, C), source classification (Open-Box, Surplus, Overstock), PKR price ceiling, or sample stock availability.
+        </p>
+      </div>
+    </section>
+
+    <section class="ga-section" style="padding-top:2rem;">
+      <div class="ga-container">
+        <div class="ga-shop-layout">
+          <!-- Sidebar / Mobile Drawer Filters (Baymard #479 Checkbox Filters) -->
+          <aside class="ga-filter-panel" id="ga-shop-filter-panel" aria-label="Product catalog filters">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+              <h2 style="font-size:1.15rem;margin:0;">Filter Catalog</h2>
+              <button type="button" class="ga-btn ga-btn--warm ga-btn--sm ga-filter-panel__close" id="ga-close-filter-drawer">✕ Done</button>
+            </div>
+
+            <div class="ga-filter-group">
+              <label for="ga-shop-search-input" class="ga-filter-group__title" style="display:block;">Keyword or SKU Search</label>
+              <input type="search" id="ga-shop-search-input" class="ga-input" placeholder="e.g., kettle, USB-C, GA-TECH..." style="padding:0.5rem 0.75rem;font-size:0.86rem;">
+            </div>
+
+            <div class="ga-filter-group">
+              <div class="ga-filter-group__title">Product Category</div>
+              <ul class="ga-checkbox-list">
+                <li><label class="ga-checkbox-label"><input type="checkbox" name="ga_filter_category" value="technology-accessories"> Technology &amp; Accessories (5)</label></li>
+                <li><label class="ga-checkbox-label"><input type="checkbox" name="ga_filter_category" value="home-kitchen"> Home &amp; Kitchen (5)</label></li>
+                <li><label class="ga-checkbox-label"><input type="checkbox" name="ga_filter_category" value="study-office"> Study &amp; Office Essentials (5)</label></li>
+                <li><label class="ga-checkbox-label"><input type="checkbox" name="ga_filter_category" value="home-organization"> Home Organization &amp; Living (5)</label></li>
+                <li><label class="ga-checkbox-label"><input type="checkbox" name="ga_filter_category" value="lifestyle-everyday"> Lifestyle &amp; Everyday (5)</label></li>
+              </ul>
+            </div>
+
+            <div class="ga-filter-group">
+              <div class="ga-filter-group__title">Condition Grade (Draft)</div>
+              <ul class="ga-checkbox-list">
+                <li><label class="ga-checkbox-label"><input type="checkbox" name="ga_filter_grade" value="A"> ✓ Grade A — Very Good (17)</label></li>
+                <li><label class="ga-checkbox-label"><input type="checkbox" name="ga_filter_grade" value="B"> ◐ Grade B — Good (6)</label></li>
+                <li><label class="ga-checkbox-label"><input type="checkbox" name="ga_filter_grade" value="C"> △ Grade C — Fair (2)</label></li>
+              </ul>
+            </div>
+
+            <div class="ga-filter-group">
+              <div class="ga-filter-group__title">Product Source Type</div>
+              <ul class="ga-checkbox-list">
+                <li><label class="ga-checkbox-label"><input type="checkbox" name="ga_filter_source" value="Open-Box"> Open-Box (11)</label></li>
+                <li><label class="ga-checkbox-label"><input type="checkbox" name="ga_filter_source" value="Surplus"> Surplus (7)</label></li>
+                <li><label class="ga-checkbox-label"><input type="checkbox" name="ga_filter_source" value="Overstock"> Overstock (7)</label></li>
+              </ul>
+            </div>
+
+            <div class="ga-filter-group">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                <label for="ga-filter-max-price" class="ga-filter-group__title" style="margin:0;">Max Sample Price (PKR)</label>
+                <span id="ga-filter-price-output" class="ga-price-num" style="font-size:0.8rem;font-weight:700;color:var(--ga-forest-deep);">Up to Rs. 5,000</span>
+              </div>
+              <input type="range" id="ga-filter-max-price" min="1000" max="5000" step="100" value="5000" style="width:100%;accent-color:var(--ga-forest);">
+              <div style="display:flex;justify-content:space-between;font-size:0.74rem;color:var(--ga-muted-ink);margin-top:4px;">
+                <span>Rs. 1,000</span>
+                <span>Rs. 3,000</span>
+                <span>Rs. 5,000</span>
+              </div>
+            </div>
+
+            <div class="ga-filter-group">
+              <div class="ga-filter-group__title">Sample Availability</div>
+              <label class="ga-checkbox-label">
+                <input type="checkbox" id="ga-filter-instock"> In-Stock Demo Items Only (24)
+              </label>
+            </div>
+
+            <button type="button" class="ga-btn ga-btn--warm ga-btn--sm ga-btn--full" data-ga-reset-filters>Clear All Filters</button>
+          </aside>
+
+          <!-- Main Catalog Area -->
+          <div>
+            <div class="ga-shop-toolbar">
+              <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+                <button type="button" class="ga-btn ga-btn--secondary ga-btn--sm ga-mobile-filter-btn" id="ga-open-filter-drawer">⚙ Filters</button>
+                <div id="ga-shop-result-count" style="font-size:0.88rem;color:var(--ga-charcoal);" aria-live="polite">
+                  Showing <strong>9</strong> of <strong>25</strong> matching sample products
+                </div>
+              </div>
+
+              <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+                <label for="ga-shop-sort-select" style="font-size:0.82rem;font-weight:700;">Sort by:</label>
+                <select id="ga-shop-sort-select" class="ga-select" style="width:auto;padding:0.42rem 0.75rem;font-size:0.84rem;">
+                  <option value="featured">Featured Demo Items</option>
+                  <option value="price-asc">Price: Low to High (PKR)</option>
+                  <option value="price-desc">Price: High to Low (PKR)</option>
+                  <option value="grade-asc">Condition Grade: A to C</option>
+                  <option value="name-asc">Product Name: A to Z</option>
+                  <option value="sample-sequence">Sample Batch Order (ID #25 to #01)</option>
+                </select>
+
+                <div role="group" aria-label="Catalog view layout" style="display:inline-flex;gap:4px;">
+                  <button type="button" class="ga-btn ga-btn--warm ga-btn--sm" data-ga-view-mode="grid" aria-pressed="true" title="Grid View">⊞ Grid</button>
+                  <button type="button" class="ga-btn ga-btn--warm ga-btn--sm" data-ga-view-mode="list" aria-pressed="false" title="Detailed List View">☰ List</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Active Filter Indicators -->
+            <div id="ga-active-filter-chips" class="ga-active-filters" hidden aria-live="polite"></div>
+
+            <!-- WooCommerce conversion: render products from the WooCommerce product loop -->
+            <div id="ga-shop-product-grid" class="ga-product-grid"></div>
+
+            <!-- Working Load More Control (Baymard Guideline #501) -->
+            <div id="ga-shop-load-more-wrap" style="text-align:center;margin-top:2.25rem;padding-top:1.5rem;border-top:1px solid var(--ga-border);">
+              <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
+                <button type="button" class="ga-btn ga-btn--primary" id="ga-load-more-btn">Load More Sample Products</button>
+                <button type="button" class="ga-btn ga-btn--secondary" id="ga-show-all-25-btn">Show All Matching Items</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- WordPress conversion: replace with footer.php (get_footer()) -->
+  <footer id="ga-site-footer" class="ga-footer"></footer>
+
+  <!-- WordPress conversion: enqueue scripts via wp_enqueue_script() in functions.php -->
+  <script src="data/products.js"></script>
+  <script src="js/partials.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

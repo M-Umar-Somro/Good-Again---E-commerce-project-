@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Condition Dossier & Details | GoodAgain Prototype</title>
+  <meta name="description" content="Inspect item-level condition grades, functional checks, included and missing accessories, and transparent PKR pricing on GoodAgain.">
+  <!-- WordPress conversion: enqueue stylesheets via wp_enqueue_style() in functions.php -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <a href="#main-content" class="ga-skip-link">Skip to main content</a>
+
+  <!-- WordPress conversion: replace with header.php (get_header()) -->
+  <header id="ga-site-header" class="ga-header">
+    <div class="ga-announcement" role="region" aria-label="Store announcement">
+      <div class="ga-container ga-announcement__inner">
+        <div>
+          <span class="ga-announcement__badge">GoodAgain</span>
+          <span>Verified surplus, open-box and everyday essentials - honest prices in Islamabad.</span>
+        </div>
+        <ul class="ga-announcement__links">
+          <li><a href="shop.html">Shop now</a></li>
+          <li><a href="condition-guide.html">Condition guide</a></li>
+          <li><a href="contact.html">Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ga-container ga-header__main">
+      <a href="index.html" class="ga-brand" aria-label="GoodAgain Home - Verified surplus. Honest value.">
+        <img src="assets/images/brand/goodagain-logo-transparent.webp" alt="GoodAgain logo" class="ga-brand__logo" width="180" height="44">
+        <span class="ga-brand__tagline">Verified surplus. Honest value.</span>
+      </a>
+      <div class="ga-header-search" role="search">
+        <form class="ga-header-search__form" id="ga-header-search-form" action="shop.html" method="get">
+          <label for="ga-global-search-input" class="sr-only">Search GoodAgain products</label>
+          <input type="search" id="ga-global-search-input" name="q" class="ga-header-search__input" placeholder="Search home, office, kitchen &amp; tech" autocomplete="off">
+          <button type="submit" class="ga-header-search__btn">Search</button>
+        </form>
+        <div id="ga-search-suggestions" class="ga-search-suggestions" hidden aria-live="polite"></div>
+      </div>
+      <div class="ga-header__actions">
+        <a href="wishlist.html" class="ga-action-pill" aria-label="Saved Wishlist items">
+          <span class="ga-action-pill__label">Saved</span>
+          <span class="ga-badge-count" data-ga-wishlist-count>0</span>
+        </a>
+        <a href="cart.html" class="ga-action-pill ga-action-pill--cart" aria-label="Shopping Cart">
+          <span class="ga-action-pill__label">Cart</span>
+          <span class="ga-badge-count" data-ga-cart-count>0</span>
+        </a>
+        <a href="my-account.html" class="ga-action-pill" aria-label="Customer Account">
+          <span class="ga-action-pill__label">Account</span>
+        </a>
+        <button type="button" class="ga-menu-toggle" id="ga-mobile-menu-btn" aria-expanded="false" aria-controls="ga-primary-nav">
+          Menu
+        </button>
+      </div>
+    </div>
+    <nav class="ga-nav-bar" id="ga-primary-nav" aria-label="Primary navigation">
+      <div class="ga-container ga-nav-bar__inner">
+        <ul class="ga-nav-list">
+          <li><a href="index.html" class="ga-nav-link">Home</a></li>
+          <li><a href="shop.html" class="ga-nav-link">Shop</a></li>
+          <li><a href="shop.html" class="ga-nav-link">Best Sellers</a></li>
+          <li><a href="how-we-check.html" class="ga-nav-link">How it Works</a></li>
+          <li><a href="condition-guide.html" class="ga-nav-link ga-nav-link--highlight">Condition Guide</a></li>
+          <li><a href="about.html" class="ga-nav-link">About</a></li>
+          <li><a href="contact.html" class="ga-nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- WordPress conversion: maps to single-product.php -->
+    <div class="ga-page-hero" style="padding:1rem 0;">
+      <div class="ga-container">
+        <nav class="ga-breadcrumbs" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="shop.html?category=technology-accessories" id="ga-pdp-bc-category">Technology and Accessories</a></li>
+            <li aria-current="page" id="ga-pdp-bc-name">Open-Box Wireless Keyboard</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <div id="ga-pdp-root">
+      <div class="ga-container ga-section">
+        <h1>Loading Checked Product Details...</h1>
+        <p>If JavaScript is disabled, please enable scripts to view the dynamic 25-product demonstration catalog or return to <a href="shop.html">the Shop page</a>.</p>
+      </div>
+    </div>
+
+    <!-- Mobile Sticky Purchase Bar (Section 8.7) -->
+    <div id="ga-mobile-sticky-bar" class="ga-sticky-buy-bar" role="region" aria-label="Quick purchase bar"></div>
+
+  </main>
+
+  <!-- WordPress conversion: replace with footer.php (get_footer()) -->
+  <footer id="ga-site-footer" class="ga-footer"></footer>
+
+  <!-- WordPress conversion: enqueue scripts via wp_enqueue_script() in functions.php -->
+  <script src="data/products.js"></script>
+  <script src="js/partials.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

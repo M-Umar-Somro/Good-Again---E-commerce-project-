@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Account & Order Milestone Preview | GoodAgain</title>
+  <meta name="description" content="Preview the customer sign-in, registration, and order-condition milestone dashboard prepared for future WooCommerce integration.">
+  <!-- WordPress conversion: enqueue stylesheets via wp_enqueue_style() in functions.php -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <a href="#main-content" class="ga-skip-link">Skip to main content</a>
+
+  <!-- WordPress conversion: replace with header.php (get_header()) -->
+  <header id="ga-site-header" class="ga-header">
+    <div class="ga-announcement" role="region" aria-label="Store announcement">
+      <div class="ga-container ga-announcement__inner">
+        <div>
+          <span class="ga-announcement__badge">GoodAgain</span>
+          <span>Verified surplus, open-box and everyday essentials - honest prices in Islamabad.</span>
+        </div>
+        <ul class="ga-announcement__links">
+          <li><a href="shop.html">Shop now</a></li>
+          <li><a href="condition-guide.html">Condition guide</a></li>
+          <li><a href="contact.html">Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ga-container ga-header__main">
+      <a href="index.html" class="ga-brand" aria-label="GoodAgain Home - Verified surplus. Honest value.">
+        <img src="assets/images/brand/goodagain-logo-transparent.webp" alt="GoodAgain logo" class="ga-brand__logo" width="180" height="44">
+        <span class="ga-brand__tagline">Verified surplus. Honest value.</span>
+      </a>
+      <div class="ga-header-search" role="search">
+        <form class="ga-header-search__form" id="ga-header-search-form" action="shop.html" method="get">
+          <label for="ga-global-search-input" class="sr-only">Search GoodAgain products</label>
+          <input type="search" id="ga-global-search-input" name="q" class="ga-header-search__input" placeholder="Search home, office, kitchen &amp; tech" autocomplete="off">
+          <button type="submit" class="ga-header-search__btn">Search</button>
+        </form>
+        <div id="ga-search-suggestions" class="ga-search-suggestions" hidden aria-live="polite"></div>
+      </div>
+      <div class="ga-header__actions">
+        <a href="wishlist.html" class="ga-action-pill" aria-label="Saved Wishlist items">
+          <span class="ga-action-pill__label">Saved</span>
+          <span class="ga-badge-count" data-ga-wishlist-count>0</span>
+        </a>
+        <a href="cart.html" class="ga-action-pill ga-action-pill--cart" aria-label="Shopping Cart">
+          <span class="ga-action-pill__label">Cart</span>
+          <span class="ga-badge-count" data-ga-cart-count>0</span>
+        </a>
+        <a href="my-account.html" class="ga-action-pill" aria-label="Customer Account">
+          <span class="ga-action-pill__label">Account</span>
+        </a>
+        <button type="button" class="ga-menu-toggle" id="ga-mobile-menu-btn" aria-expanded="false" aria-controls="ga-primary-nav">
+          Menu
+        </button>
+      </div>
+    </div>
+    <nav class="ga-nav-bar" id="ga-primary-nav" aria-label="Primary navigation">
+      <div class="ga-container ga-nav-bar__inner">
+        <ul class="ga-nav-list">
+          <li><a href="index.html" class="ga-nav-link">Home</a></li>
+          <li><a href="shop.html" class="ga-nav-link">Shop</a></li>
+          <li><a href="shop.html" class="ga-nav-link">Best Sellers</a></li>
+          <li><a href="how-we-check.html" class="ga-nav-link">How it Works</a></li>
+          <li><a href="condition-guide.html" class="ga-nav-link ga-nav-link--highlight">Condition Guide</a></li>
+          <li><a href="about.html" class="ga-nav-link">About</a></li>
+          <li><a href="contact.html" class="ga-nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- WordPress conversion: maps to WooCommerce [woocommerce_my_account] page (myaccount/form-login.php & dashboard.php) -->
+    <section class="ga-page-hero">
+      <div class="ga-container">
+        <nav class="ga-breadcrumbs" aria-label="Breadcrumb">
+          <ol><li><a href="index.html">Home</a></li><li aria-current="page">Customer Account (Front-End Demonstration)</li></ol>
+        </nav>
+        <span class="ga-demo-pill" style="background:var(--ga-olive-soft);color:var(--ga-forest-deep);border-style:solid;margin-bottom:8px;">Front-End Interface Only • No Password Storage or Live Authentication</span>
+        <h1>My Account &amp; Order Status Preview</h1>
+        <p style="max-width:780px;margin:0;">
+          This page demonstrates the sign-in, registration, and order-milestone tracking layout prepared for future integration with WooCommerce’s native <code>[woocommerce_my_account]</code> system.
+        </p>
+      </div>
+    </section>
+
+    <section class="ga-section">
+      <div class="ga-container">
+        <div id="ga-account-demo-status" aria-live="polite"></div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:2rem;">
+          <!-- Sign-In Form -->
+          <div style="background:var(--ga-white);border:1.5px solid var(--ga-border);border-radius:var(--ga-radius-xl);padding:2rem;">
+            <h2>Sign In (Demo UI)</h2>
+            <p style="font-size:0.85rem;color:var(--ga-muted-ink);margin-bottom:1rem;">
+              Maps to <code>woocommerce/myaccount/form-login.php</code>. Do not enter a real password—this form validates input format only.
+            </p>
+            <form data-ga-account-form="login" novalidate>
+              <div class="ga-form-group">
+                <label for="ga-login-email" class="ga-label">Email Address <span class="ga-required">*</span></label>
+                <input type="email" id="ga-login-email" class="ga-input" placeholder="student@university.edu.pk" required autocomplete="off">
+                <span class="ga-field-error"></span>
+              </div>
+              <div class="ga-form-group">
+                <label for="ga-login-pass" class="ga-label">Sample Password Placeholder <span class="ga-required">*</span></label>
+                <input type="password" id="ga-login-pass" class="ga-input" placeholder="Enter any sample text" required autocomplete="off">
+                <span class="ga-field-error"></span>
+              </div>
+              <button type="submit" class="ga-btn ga-btn--primary">Test Sign-In Validation</button>
+            </form>
+          </div>
+
+          <!-- Registration Form -->
+          <div style="background:var(--ga-white);border:1.5px solid var(--ga-border);border-radius:var(--ga-radius-xl);padding:2rem;">
+            <h2>Create Account (Demo UI)</h2>
+            <p style="font-size:0.85rem;color:var(--ga-muted-ink);margin-bottom:1rem;">
+              Optional account creation for order history and restock alerts (guest checkout and guest wishlist are always available without registering).
+            </p>
+            <form data-ga-account-form="register" novalidate>
+              <div class="ga-form-group">
+                <label for="ga-reg-name" class="ga-label">Full Name <span class="ga-required">*</span></label>
+                <input type="text" id="ga-reg-name" class="ga-input" placeholder="e.g., Bilal Tariq" required autocomplete="off">
+                <span class="ga-field-error"></span>
+              </div>
+              <div class="ga-form-group">
+                <label for="ga-reg-email" class="ga-label">Email Address <span class="ga-required">*</span></label>
+                <input type="email" id="ga-reg-email" class="ga-input" placeholder="bilal@example.com" required autocomplete="off">
+                <span class="ga-field-error"></span>
+              </div>
+              <div class="ga-form-group">
+                <label for="ga-reg-segment" class="ga-label">Primary Shopping Interest (Optional)</label>
+                <select id="ga-reg-segment" class="ga-select">
+                  <option value="student">University / Hostel Student in Islamabad</option>
+                  <option value="household">Household &amp; Kitchen Buyer</option>
+                  <option value="office">Small Office / Organization Buyer</option>
+                </select>
+              </div>
+              <button type="submit" class="ga-btn ga-btn--secondary">Test Registration UI</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Sample Order & Return Milestone Dashboard Preview (Baymard Guidelines #873 & #922) -->
+        <div style="margin-top:2.5rem;background:var(--ga-oatmeal);border:1.5px solid var(--ga-border-strong);border-radius:var(--ga-radius-xl);padding:2rem;">
+          <span class="ga-demo-pill" style="margin-bottom:6px;">Illustrative Dashboard Preview • Baymard Guidelines #873 &amp; #922</span>
+          <h2>How Order &amp; Condition Records Will Appear in WooCommerce</h2>
+          <p style="font-size:0.9rem;max-width:760px;">
+            In the future live store, your account dashboard will preserve the exact Condition Grade, SKU, and disclosed accessory checklist recorded at the moment you ordered—so you can verify your parcel upon delivery:
+          </p>
+          <div style="background:var(--ga-white);border:1px solid var(--ga-border);border-radius:var(--ga-radius-lg);padding:1.25rem;margin-top:1rem;">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--ga-border);padding-bottom:10px;margin-bottom:12px;">
+              <div>
+                <strong>Sample Order Record #GA-DEMO-1042</strong> • <span style="font-size:0.82rem;color:var(--ga-muted-ink);">Illustrative Example Only</span>
+              </div>
+              <span class="ga-grade-badge ga-grade-badge--A">Milestone 3 of 4: Dispatched in Islamabad (Sample)</span>
+            </div>
+            <p style="font-size:0.86rem;margin-bottom:8px;">
+              <strong>Recorded Item:</strong> Open-Box Wireless Keyboard (<code>GA-TECH-001-A</code>) • <strong>Recorded Grade:</strong> Grade A (Draft) • <strong>Disclosed Missing Item at Checkout:</strong> 2x AAA starter batteries
+            </p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;font-size:0.78rem;margin-top:10px;">
+              <div style="background:var(--ga-grade-a-bg);color:var(--ga-grade-a-ink);padding:8px 10px;border-radius:8px;font-weight:700;">1. Order &amp; Grade Logged ✓</div>
+              <div style="background:var(--ga-grade-a-bg);color:var(--ga-grade-a-ink);padding:8px 10px;border-radius:8px;font-weight:700;">2. Pre-Dispatch Check ✓</div>
+              <div style="background:var(--ga-olive-soft);color:var(--ga-forest-deep);padding:8px 10px;border-radius:8px;font-weight:700;border:1px solid var(--ga-forest);">3. Local Dispatch (Sample)</div>
+              <div style="background:var(--ga-cream);color:var(--ga-muted-ink);padding:8px 10px;border-radius:8px;">4. Customer Inspection Window</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- WordPress conversion: replace with footer.php (get_footer()) -->
+  <footer id="ga-site-footer" class="ga-footer"></footer>
+
+  <!-- WordPress conversion: enqueue scripts via wp_enqueue_script() in functions.php -->
+  <script src="data/products.js"></script>
+  <script src="js/partials.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

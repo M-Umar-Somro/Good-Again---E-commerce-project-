@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | GoodAgain</title>
+  <meta name="description" content="Complete your GoodAgain order with delivery details, contact information, and your preferred payment method.">
+  <!-- WordPress conversion: enqueue stylesheets via wp_enqueue_style() in functions.php -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <a href="#main-content" class="ga-skip-link">Skip to main content</a>
+
+  <!-- WordPress conversion: replace with header.php (get_header()) -->
+  <header id="ga-site-header" class="ga-header">
+    <div class="ga-announcement" role="region" aria-label="Store announcement">
+      <div class="ga-container ga-announcement__inner">
+        <div>
+          <span class="ga-announcement__badge">GoodAgain</span>
+          <span>Verified surplus, open-box and everyday essentials - honest prices.</span>
+        </div>
+        <ul class="ga-announcement__links">
+          <li><a href="shop.html">Shop now</a></li>
+          <li><a href="condition-guide.html">Condition guide</a></li>
+          <li><a href="contact.html">Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ga-container ga-header__main">
+      <a href="index.html" class="ga-brand" aria-label="GoodAgain Home - Verified surplus. Honest value.">
+        <img src="assets/images/brand/goodagain-logo-transparent.webp" alt="GoodAgain logo" class="ga-brand__logo" width="180" height="44">
+        <span class="ga-brand__tagline">Verified surplus. Honest value.</span>
+      </a>
+      <div class="ga-header-search" role="search">
+        <form class="ga-header-search__form" id="ga-header-search-form" action="shop.html" method="get">
+          <label for="ga-global-search-input" class="sr-only">Search GoodAgain products</label>
+          <input type="search" id="ga-global-search-input" name="q" class="ga-header-search__input" placeholder="Search home, office, kitchen &amp; tech" autocomplete="off">
+          <button type="submit" class="ga-header-search__btn">Search</button>
+        </form>
+        <div id="ga-search-suggestions" class="ga-search-suggestions" hidden aria-live="polite"></div>
+      </div>
+      <div class="ga-header__actions">
+        <a href="wishlist.html" class="ga-action-pill" aria-label="Saved Wishlist items">
+          <span class="ga-action-pill__label">Saved</span>
+          <span class="ga-badge-count" data-ga-wishlist-count>0</span>
+        </a>
+        <a href="cart.html" class="ga-action-pill ga-action-pill--cart" aria-label="Shopping Cart">
+          <span class="ga-action-pill__label">Cart</span>
+          <span class="ga-badge-count" data-ga-cart-count>0</span>
+        </a>
+        <a href="my-account.html" class="ga-action-pill" aria-label="Customer Account">
+          <span class="ga-action-pill__label">Account</span>
+        </a>
+        <button type="button" class="ga-menu-toggle" id="ga-mobile-menu-btn" aria-expanded="false" aria-controls="ga-primary-nav">
+          Menu
+        </button>
+      </div>
+    </div>
+    <nav class="ga-nav-bar" id="ga-primary-nav" aria-label="Primary navigation">
+      <div class="ga-container ga-nav-bar__inner">
+        <ul class="ga-nav-list">
+          <li><a href="index.html" class="ga-nav-link">Home</a></li>
+          <li><a href="shop.html" class="ga-nav-link">Shop</a></li>
+          <li><a href="shop.html" class="ga-nav-link">Best Sellers</a></li>
+          <li><a href="how-we-check.html" class="ga-nav-link">How it Works</a></li>
+          <li><a href="condition-guide.html" class="ga-nav-link ga-nav-link--highlight">Condition Guide</a></li>
+          <li><a href="about.html" class="ga-nav-link">About</a></li>
+          <li><a href="contact.html" class="ga-nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- WordPress conversion: maps to WooCommerce checkout page ([woocommerce_checkout]) -->
+    <section class="ga-page-hero">
+      <div class="ga-container">
+        <nav class="ga-breadcrumbs" aria-label="Breadcrumb">
+          <ol><li><a href="index.html">Home</a></li><li><a href="cart.html">Cart</a></li><li aria-current="page">Checkout</li></ol>
+        </nav>
+        <h1>Checkout</h1>
+        <p style="max-width:780px;margin:0;">
+          Complete your order with delivery details, contact information and your preferred payment method. A simple checkout keeps your purchase quick and clear.
+        </p>
+      </div>
+    </section>
+
+    <section class="ga-section">
+      <div class="ga-container">
+        <div id="ga-checkout-confirmation" aria-live="polite"></div>
+
+        <form id="ga-checkout-form" class="ga-cart-layout" novalidate>
+          <div style="background:var(--ga-white);border:1.5px solid var(--ga-border);border-radius:var(--ga-radius-xl);padding:2rem;">
+            <h2>1. Contact &amp;  Delivery Details (Guest Checkout)</h2>
+            <p style="font-size:0.86rem;color:var(--ga-muted-ink);margin-bottom:1.25rem;">
+              No account registration is required to complete a purchase (Baymard Checkout Best Practice). Fields marked with <span class="ga-required">*</span> are required.
+            </p>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+              <div class="ga-form-group">
+                <label for="ga-chk-name" class="ga-label">Recipient Full Name <span class="ga-required">*</span></label>
+                <input type="text" id="ga-chk-name" class="ga-input" placeholder="e.g., Sara Mahmood" required>
+                <span class="ga-field-error"></span>
+              </div>
+              <div class="ga-form-group">
+                <label for="ga-chk-email" class="ga-label">Email for Order &amp; Condition Summary <span class="ga-required">*</span></label>
+                <input type="email" id="ga-chk-email" class="ga-input" placeholder="sara@example.com" required>
+                <span class="ga-field-error"></span>
+              </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+              <div class="ga-form-group">
+                <label for="ga-chk-phone" class="ga-label">Mobile / WhatsApp Delivery Contact <span class="ga-required">*</span></label>
+                <input type="tel" id="ga-chk-phone" class="ga-input" placeholder="0300-1234567" required data-validate-phone="true">
+                <span class="ga-field-error"></span>
+              </div>
+              <div class="ga-form-group">
+                <label for="ga-chk-sector" class="ga-label"> Sector / Campus Area <span class="ga-required">*</span></label>
+                <input type="text" id="ga-chk-sector" class="ga-input" placeholder="e.g., Sector F-10, H-12 Campus, G-11, Bahria Enclave" required>
+                <span class="ga-field-error"></span>
+              </div>
+            </div>
+
+            <div class="ga-form-group">
+              <label for="ga-chk-address" class="ga-label">Street Address, House/Apartment, or Hostel Block <span class="ga-required">*</span></label>
+              <input type="text" id="ga-chk-address" class="ga-input" placeholder="Street #, House/Hostel Name, Room or Landmark" required>
+              <span class="ga-field-error"></span>
+            </div>
+
+            <h2 style="margin-top:1.75rem;">2. Select Sample Delivery Method</h2>
+            <div style="display:grid;gap:10px;margin:0.75rem 0 1.75rem;">
+              <label style="display:flex;align-items:flex-start;gap:10px;background:var(--ga-oatmeal);padding:12px 14px;border-radius:12px;border:1px solid var(--ga-border);cursor:pointer;">
+                <input type="radio" name="checkout_shipping_mode" value="-standard" checked style="margin-top:4px;accent-color:var(--ga-forest);">
+                <span>
+                  <strong>Standard Local Delivery (Sample: Rs. 250 / Free on Rs. 5,000+)</strong><br>
+                  <span style="font-size:0.82rem;color:var(--ga-slate);">Illustrative local dispatch option for residential sectors, offices, and campuses.</span>
+                </span>
+              </label>
+              <label style="display:flex;align-items:flex-start;gap:10px;background:var(--ga-oatmeal);padding:12px 14px;border-radius:12px;border:1px solid var(--ga-border);cursor:pointer;">
+                <input type="radio" name="checkout_shipping_mode" value="campus-pickup" style="margin-top:4px;accent-color:var(--ga-forest);">
+                <span>
+                  <strong>Coordinated Campus / Hub Drop-Off Demo (Sample: Rs. 0)</strong><br>
+                  <span style="font-size:0.82rem;color:var(--ga-slate);">Illustrative scheduled drop-off point option for university student orders.</span>
+                </span>
+              </label>
+            </div>
+
+            <h2>3. Planned Payment Methods (Illustrative Only)</h2>
+            <div class="ga-status-banner ga-status-banner--warning" style="font-size:0.82rem;">
+              <strong>Payment Gateway Disclosure:</strong> GoodAgain’s business plan identifies Cash on Delivery, Bank Transfer, Cards, Easypaisa, and JazzCash as planned payment possibilities, subject to merchant approval and WooCommerce gateway integration. <strong>None of these options process live payments in this prototype, and we never ask for card numbers, PINs, or OTPs here.</strong>
+            </div>
+
+            <div style="display:grid;gap:10px;margin-bottom:1.5rem;">
+              <label style="display:flex;align-items:flex-start;gap:10px;background:var(--ga-cream);padding:12px 14px;border-radius:12px;border:1px solid var(--ga-border);cursor:pointer;">
+                <input type="radio" name="demo_payment_method" value="Cash on Delivery (COD — Illustrative Demo)" checked style="margin-top:4px;accent-color:var(--ga-forest);">
+                <span>
+                  <strong>Cash on Delivery (COD) — Planned Launch Option</strong><br>
+                  <span style="font-size:0.8rem;color:var(--ga-slate);">Pay in PKR cash upon receiving your parcel  (Illustrative demo option).</span>
+                </span>
+              </label>
+              <label style="display:flex;align-items:flex-start;gap:10px;background:var(--ga-cream);padding:12px 14px;border-radius:12px;border:1px solid var(--ga-border);cursor:pointer;">
+                <input type="radio" name="demo_payment_method" value="Easypaisa WooCommerce Plugin (Planned — Illustrative Demo)" style="margin-top:4px;accent-color:var(--ga-forest);">
+                <span>
+                  <strong>Easypaisa Mobile Wallet — Planned WooCommerce Integration</strong><br>
+                  <span style="font-size:0.8rem;color:var(--ga-slate);">Subject to merchant portal approval and official WooCommerce plugin setup.</span>
+                </span>
+              </label>
+              <label style="display:flex;align-items:flex-start;gap:10px;background:var(--ga-cream);padding:12px 14px;border-radius:12px;border:1px solid var(--ga-border);cursor:pointer;">
+                <input type="radio" name="demo_payment_method" value="JazzCash Payment Gateway (Planned — Illustrative Demo)" style="margin-top:4px;accent-color:var(--ga-forest);">
+                <span>
+                  <strong>JazzCash E-Commerce Gateway — Planned WooCommerce Integration</strong><br>
+                  <span style="font-size:0.8rem;color:var(--ga-slate);">Subject to merchant onboarding and technical integration in WordPress.</span>
+                </span>
+              </label>
+              <label style="display:flex;align-items:flex-start;gap:10px;background:var(--ga-cream);padding:12px 14px;border-radius:12px;border:1px solid var(--ga-border);cursor:pointer;">
+                <input type="radio" name="demo_payment_method" value="Direct Bank Transfer / IBFT (Planned — Illustrative Demo)" style="margin-top:4px;accent-color:var(--ga-forest);">
+                <span>
+                  <strong>Direct Bank Transfer (IBFT / Raast) — Planned Option</strong><br>
+                  <span style="font-size:0.8rem;color:var(--ga-slate);">Business bank account details to be provided by owner before live activation.</span>
+                </span>
+              </label>
+              <label style="display:flex;align-items:flex-start;gap:10px;background:var(--ga-cream);padding:12px 14px;border-radius:12px;border:1px solid var(--ga-border);cursor:pointer;">
+                <input type="radio" name="demo_payment_method" value="Debit / Credit Card Gateway (Planned — Illustrative Demo)" style="margin-top:4px;accent-color:var(--ga-forest);">
+                <span>
+                  <strong>Debit / Credit Cards — Planned Gateway Option</strong><br>
+                  <span style="font-size:0.8rem;color:var(--ga-slate);">No card number fields are shown in this prototype to prevent sensitive data entry.</span>
+                </span>
+              </label>
+            </div>
+
+            <div class="ga-form-group">
+              <label class="ga-checkbox-label">
+                <input type="checkbox" id="ga-chk-consent" required>
+                <span>I understand this is a front-end demonstration checkout and that I have reviewed the disclosed Condition Grade and accessories for my selected demo items. <span class="ga-required">*</span></span>
+              </label>
+              <span class="ga-field-error"></span>
+            </div>
+
+            <button type="submit" class="ga-btn ga-btn--primary ga-btn--full">Place Demonstration Order (No Live Charge)</button>
+          </div>
+
+          <aside class="ga-summary-card" aria-label="Checkout order summary">
+            <h2 style="font-size:1.25rem;margin-bottom:12px;">Your Sample Order Summary</h2>
+            <div id="ga-checkout-order-summary"></div>
+            <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--ga-border);font-size:0.8rem;color:var(--ga-muted-ink);">
+              Need to adjust quantities or inspect a condition grade again? <a href="cart.html">Return to Demo Cart</a>.
+            </div>
+          </aside>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- WordPress conversion: replace with footer.php (get_footer()) -->
+  <footer id="ga-site-footer" class="ga-footer"></footer>
+
+  <!-- WordPress conversion: enqueue scripts via wp_enqueue_script() in functions.php -->
+  <script src="data/products.js"></script>
+  <script src="js/partials.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,824 @@
+/**
+ * GoodAgain — Reusable UI Components (css/components.css)
+ * Includes: Header, Navigation, Announcement Bar, Buttons, Condition Badges,
+ * Product Cards, Modals, Toast Notifications, Accordions, Forms, and Footer.
+ */
+
+/* 1. Announcement & Prototype Notice Bar */
+.ga-announcement {
+  background-color: var(--ga-charcoal);
+  color: var(--ga-offwhite);
+  font-size: var(--ga-text-xs);
+  padding: var(--ga-space-2) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.ga-announcement__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ga-space-3);
+  flex-wrap: wrap;
+}
+
+.ga-announcement__badge {
+  background-color: var(--ga-lime);
+  color: var(--ga-forest-deep);
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--ga-radius-pill);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-right: var(--ga-space-2);
+}
+
+.ga-announcement__links {
+  display: flex;
+  gap: var(--ga-space-4);
+  list-style: none;
+  padding: 0;
+}
+
+.ga-announcement__links a {
+  color: var(--ga-green-muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.ga-announcement__links a:hover {
+  color: var(--ga-lime);
+  text-decoration: underline;
+}
+
+/* 2. Shared Sticky Header & Navigation */
+.ga-header {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background-color: rgba(250, 246, 240, 0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--ga-border);
+  transition: box-shadow var(--ga-transition);
+}
+
+.ga-header--scrolled {
+  box-shadow: var(--ga-shadow-md);
+}
+
+.ga-header__main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ga-space-4);
+  padding: var(--ga-space-3) 0;
+}
+
+.ga-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ga-space-3);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.ga-brand__logo {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+.ga-brand__tagline {
+  font-size: 0.74rem;
+  color: var(--ga-muted-ink);
+  font-weight: 600;
+  display: block;
+  margin-top: -2px;
+}
+
+/* Header Search Form */
+.ga-header-search {
+  flex: 1 1 420px;
+  max-width: 500px;
+  position: relative;
+}
+
+.ga-header-search__form {
+  display: flex;
+  align-items: center;
+  background: var(--ga-white);
+  border: 1.5px solid var(--ga-border-strong);
+  border-radius: var(--ga-radius-pill);
+  padding: 3px 4px 3px var(--ga-space-4);
+  transition: border-color var(--ga-transition), box-shadow var(--ga-transition);
+}
+
+.ga-header-search__form:focus-within {
+  border-color: var(--ga-forest);
+  box-shadow: var(--ga-focus-ring);
+}
+
+.ga-header-search__input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  padding: var(--ga-space-1) var(--ga-space-2);
+  font-size: var(--ga-text-sm);
+  outline: none;
+}
+
+.ga-header-search__btn {
+  background: var(--ga-forest);
+  color: var(--ga-white);
+  border: none;
+  border-radius: var(--ga-radius-pill);
+  padding: var(--ga-space-2) var(--ga-space-4);
+  font-size: var(--ga-text-xs);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ga-header-search__btn:hover {
+  background: var(--ga-forest-hover);
+}
+
+/* Header Actions (Wishlist, Cart, Account, Mobile Menu Toggle) */
+.ga-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--ga-space-2);
+}
+
+.ga-action-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: var(--ga-space-2) var(--ga-space-3);
+  background: var(--ga-oatmeal);
+  border: 1px solid var(--ga-border);
+  border-radius: var(--ga-radius-pill);
+  color: var(--ga-charcoal);
+  text-decoration: none;
+  font-size: var(--ga-text-xs);
+  font-weight: 600;
+  transition: background var(--ga-transition), border-color var(--ga-transition);
+}
+
+.ga-action-pill:hover {
+  background: var(--ga-green-muted);
+  border-color: var(--ga-forest);
+  color: var(--ga-forest-deep);
+}
+
+.ga-action-pill--cart {
+  background: var(--ga-forest);
+  color: var(--ga-white);
+  border-color: var(--ga-forest);
+}
+
+.ga-action-pill--cart:hover {
+  background: var(--ga-forest-hover);
+  color: var(--ga-white);
+}
+
+.ga-badge-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--ga-radius-pill);
+  background: var(--ga-lime);
+  color: var(--ga-forest-deep);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.ga-menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: var(--ga-space-2) var(--ga-space-3);
+  border: 1.5px solid var(--ga-charcoal);
+  border-radius: var(--ga-radius-md);
+  background: var(--ga-white);
+  font-weight: 700;
+  font-size: var(--ga-text-xs);
+}
+
+/* Secondary Navigation & Category Bar */
+.ga-nav-bar {
+  background: var(--ga-oatmeal);
+  border-top: 1px solid var(--ga-border);
+}
+
+.ga-nav-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--ga-space-3);
+  padding: var(--ga-space-2) 0;
+  overflow-x: auto;
+}
+
+.ga-nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--ga-space-1);
+  list-style: none;
+  padding: 0;
+  flex-wrap: nowrap;
+}
+
+.ga-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: var(--ga-radius-pill);
+  color: var(--ga-charcoal);
+  text-decoration: none;
+  font-size: var(--ga-text-xs);
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background var(--ga-transition), color var(--ga-transition);
+}
+
+.ga-nav-link:hover,
+.ga-nav-link[aria-current="page"] {
+  background: var(--ga-forest);
+  color: var(--ga-white);
+}
+
+.ga-nav-link--highlight {
+  background: var(--ga-olive-soft);
+  color: var(--ga-forest-deep);
+  border: 1px solid var(--ga-forest);
+}
+
+/* 3. Buttons */
+.ga-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ga-space-2);
+  padding: 0.72rem 1.35rem;
+  border-radius: var(--ga-radius-pill);
+  font-family: var(--ga-font-display);
+  font-size: var(--ga-text-sm);
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: all var(--ga-transition);
+  line-height: 1.2;
+}
+
+.ga-btn--primary {
+  background-color: var(--ga-forest);
+  color: var(--ga-white);
+  border-color: var(--ga-forest);
+}
+
+.ga-btn--primary:hover {
+  background-color: var(--ga-forest-hover);
+  border-color: var(--ga-forest-hover);
+  color: var(--ga-white);
+  transform: translateY(-1px);
+}
+
+.ga-btn--secondary {
+  background-color: var(--ga-white);
+  color: var(--ga-forest);
+  border-color: var(--ga-forest);
+}
+
+.ga-btn--secondary:hover {
+  background-color: var(--ga-olive-soft);
+  color: var(--ga-forest-deep);
+}
+
+.ga-btn--warm {
+  background-color: var(--ga-oatmeal-deep);
+  color: var(--ga-charcoal);
+  border-color: var(--ga-border-strong);
+}
+
+.ga-btn--warm:hover {
+  background-color: var(--ga-border);
+  color: var(--ga-charcoal);
+}
+
+.ga-btn--sm {
+  padding: 0.48rem 0.95rem;
+  font-size: var(--ga-text-xs);
+}
+
+.ga-btn--full {
+  width: 100%;
+}
+
+.ga-btn[disabled], .ga-btn--disabled {
+  background-color: var(--ga-gray-soft) !important;
+  color: var(--ga-muted-ink) !important;
+  border-color: var(--ga-border) !important;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* 4. Condition Grade & Source Badges (Never rely on color alone) */
+.ga-badge-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.ga-source-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: var(--ga-radius-pill);
+  font-size: 0.72rem;
+  font-weight: 700;
+  background-color: var(--ga-oatmeal);
+  color: var(--ga-charcoal);
+  border: 1px solid var(--ga-border-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.ga-grade-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: var(--ga-radius-pill);
+  font-size: 0.74rem;
+  font-weight: 700;
+  border: 1.5px solid transparent;
+}
+
+.ga-grade-badge--A {
+  background-color: var(--ga-grade-a-bg);
+  color: var(--ga-grade-a-ink);
+  border-color: var(--ga-grade-a-border);
+}
+
+.ga-grade-badge--B {
+  background-color: var(--ga-grade-b-bg);
+  color: var(--ga-grade-b-ink);
+  border-color: var(--ga-grade-b-border);
+}
+
+.ga-grade-badge--C {
+  background-color: var(--ga-grade-c-bg);
+  color: var(--ga-grade-c-ink);
+  border-color: var(--ga-grade-c-border);
+}
+
+.ga-demo-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: var(--ga-radius-sm);
+  font-size: 0.68rem;
+  font-weight: 700;
+  background-color: #EFECE6;
+  color: var(--ga-muted-ink);
+  border: 1px dashed var(--ga-border-strong);
+}
+
+/* 5. Product Card (Proposal B Soft Rounded Card with Above-Fold Transparency) */
+.ga-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  gap: var(--ga-space-6);
+}
+
+.ga-product-grid--list {
+  grid-template-columns: 1fr;
+}
+
+.ga-product-card {
+  background-color: var(--ga-white);
+  border: 1px solid var(--ga-border);
+  border-radius: var(--ga-radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--ga-transition), box-shadow var(--ga-transition), border-color var(--ga-transition);
+  box-shadow: var(--ga-shadow-sm);
+  position: relative;
+}
+
+.ga-product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--ga-shadow-md);
+  border-color: var(--ga-forest);
+}
+
+.ga-product-card__media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background-color: var(--ga-oatmeal);
+  overflow: hidden;
+  border-bottom: 1px solid var(--ga-border);
+}
+
+.ga-product-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.ga-product-card:hover .ga-product-card__img {
+  transform: scale(1.02);
+}
+
+.ga-product-card__wishlist-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--ga-border-strong);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ga-charcoal);
+  z-index: 2;
+  transition: all var(--ga-transition);
+}
+
+.ga-product-card__wishlist-btn:hover,
+.ga-product-card__wishlist-btn[aria-pressed="true"] {
+  background: var(--ga-terracotta-bg);
+  color: var(--ga-terracotta);
+  border-color: var(--ga-terracotta);
+}
+
+.ga-product-card__body {
+  padding: var(--ga-space-4);
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  gap: var(--ga-space-2);
+}
+
+.ga-product-card__category {
+  font-size: 0.73rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ga-moss);
+}
+
+.ga-product-card__title {
+  font-size: var(--ga-text-md);
+  font-weight: 700;
+  margin: 0;
+}
+
+.ga-product-card__title a {
+  color: var(--ga-charcoal);
+  text-decoration: none;
+}
+
+.ga-product-card__title a:hover {
+  color: var(--ga-forest);
+  text-decoration: underline;
+}
+
+.ga-product-card__condition-box {
+  background-color: var(--ga-cream);
+  border: 1px solid var(--ga-border);
+  border-radius: var(--ga-radius-md);
+  padding: var(--ga-space-2) var(--ga-space-3);
+  font-size: var(--ga-text-xs);
+  color: var(--ga-slate);
+}
+
+.ga-product-card__condition-box strong {
+  color: var(--ga-charcoal);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.ga-product-card__pricing {
+  margin-top: auto;
+  padding-top: var(--ga-space-2);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--ga-space-2);
+}
+
+.ga-product-card__price {
+  font-family: var(--ga-font-display);
+  font-size: var(--ga-text-xl);
+  font-weight: 800;
+  color: var(--ga-forest-deep);
+}
+
+.ga-product-card__ref-price {
+  font-size: var(--ga-text-xs);
+  color: var(--ga-muted-ink);
+  text-decoration: line-through;
+  margin-left: 6px;
+}
+
+.ga-product-card__unit-note {
+  display: block;
+  width: 100%;
+  font-size: 0.74rem;
+  color: var(--ga-moss);
+  font-weight: 600;
+}
+
+.ga-product-card__actions {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--ga-space-2);
+  margin-top: var(--ga-space-3);
+}
+
+/* List view adaptation */
+.ga-product-grid--list .ga-product-card {
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.ga-product-grid--list .ga-product-card__media {
+  width: 240px;
+  flex-shrink: 0;
+  border-bottom: none;
+  border-right: 1px solid var(--ga-border);
+}
+
+/* 6. Modals (Quick View & Lightbox Zoom) */
+.ga-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 45, 35, 0.68);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ga-space-4);
+  z-index: 2000;
+}
+
+.ga-modal-backdrop.is-open {
+  display: flex;
+}
+
+.ga-modal {
+  background: var(--ga-white);
+  border-radius: var(--ga-radius-xl);
+  max-width: 880px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--ga-shadow-lg);
+  border: 1px solid var(--ga-border);
+  padding: var(--ga-space-6);
+  position: relative;
+}
+
+.ga-modal__close {
+  position: sticky;
+  top: 0;
+  float: right;
+  background: var(--ga-oatmeal);
+  border: 1px solid var(--ga-border-strong);
+  border-radius: var(--ga-radius-pill);
+  padding: 6px 14px;
+  font-size: var(--ga-text-xs);
+  font-weight: 700;
+  z-index: 5;
+}
+
+/* 7. Toast Notification */
+.ga-toast-region {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ga-space-2);
+  max-width: 360px;
+}
+
+.ga-toast {
+  background: var(--ga-charcoal);
+  color: var(--ga-white);
+  padding: var(--ga-space-3) var(--ga-space-4);
+  border-radius: var(--ga-radius-md);
+  box-shadow: var(--ga-shadow-lg);
+  border-left: 4px solid var(--ga-lime);
+  font-size: var(--ga-text-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ga-space-3);
+}
+
+.ga-toast a {
+  color: var(--ga-lime);
+  font-weight: 700;
+}
+
+/* 8. Forms & Inline Validation */
+.ga-form-group {
+  margin-bottom: var(--ga-space-4);
+}
+
+.ga-label {
+  display: block;
+  font-weight: 700;
+  font-size: var(--ga-text-sm);
+  margin-bottom: 6px;
+  color: var(--ga-charcoal);
+}
+
+.ga-required {
+  color: var(--ga-terracotta);
+  margin-left: 2px;
+}
+
+.ga-input, .ga-select, .ga-textarea {
+  width: 100%;
+  padding: 0.7rem 0.95rem;
+  border: 1.5px solid var(--ga-border-strong);
+  border-radius: var(--ga-radius-md);
+  background-color: var(--ga-white);
+  color: var(--ga-charcoal);
+  transition: border-color var(--ga-transition), box-shadow var(--ga-transition);
+}
+
+.ga-input:focus, .ga-select:focus, .ga-textarea:focus {
+  border-color: var(--ga-forest);
+  box-shadow: var(--ga-focus-ring);
+  outline: none;
+}
+
+.ga-input[aria-invalid="true"],
+.ga-select[aria-invalid="true"],
+.ga-textarea[aria-invalid="true"] {
+  border-color: var(--ga-danger-border);
+  background-color: var(--ga-danger-bg);
+}
+
+.ga-field-error {
+  display: none;
+  color: var(--ga-danger-ink);
+  font-size: var(--ga-text-xs);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.ga-field-error.is-visible {
+  display: block;
+}
+
+.ga-status-banner {
+  padding: var(--ga-space-4);
+  border-radius: var(--ga-radius-md);
+  border: 1.5px solid var(--ga-grade-a-border);
+  background-color: var(--ga-grade-a-bg);
+  color: var(--ga-grade-a-ink);
+  margin-bottom: var(--ga-space-4);
+}
+
+.ga-status-banner--warning {
+  border-color: var(--ga-grade-b-border);
+  background-color: var(--ga-grade-b-bg);
+  color: var(--ga-grade-b-ink);
+}
+
+/* 9. Accessible Accordions */
+.ga-accordion {
+  border: 1px solid var(--ga-border);
+  border-radius: var(--ga-radius-lg);
+  background: var(--ga-white);
+  overflow: hidden;
+}
+
+.ga-accordion__item + .ga-accordion__item {
+  border-top: 1px solid var(--ga-border);
+}
+
+.ga-accordion__trigger {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: var(--ga-space-4) var(--ga-space-5);
+  font-family: var(--ga-font-display);
+  font-size: var(--ga-text-md);
+  font-weight: 700;
+  color: var(--ga-charcoal);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ga-space-3);
+}
+
+.ga-accordion__trigger:hover {
+  background-color: var(--ga-oatmeal);
+}
+
+.ga-accordion__icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--ga-oatmeal);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  flex-shrink: 0;
+  transition: transform var(--ga-transition);
+}
+
+.ga-accordion__trigger[aria-expanded="true"] .ga-accordion__icon {
+  transform: rotate(45deg);
+  background: var(--ga-forest);
+  color: var(--ga-white);
+}
+
+.ga-accordion__panel {
+  padding: 0 var(--ga-space-5) var(--ga-space-4);
+  color: var(--ga-slate);
+}
+
+.ga-accordion__panel[hidden] {
+  display: none;
+}
+
+/* 10. Shared Footer */
+.ga-footer {
+  background-color: var(--ga-charcoal);
+  color: var(--ga-offwhite);
+  padding-top: var(--ga-space-12);
+  padding-bottom: var(--ga-space-8);
+  margin-top: var(--ga-space-16);
+  border-top: 4px solid var(--ga-forest);
+}
+
+.ga-footer__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+  gap: var(--ga-space-8);
+  padding-bottom: var(--ga-space-8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.ga-footer__title {
+  color: var(--ga-lime);
+  font-size: var(--ga-text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--ga-space-3);
+}
+
+.ga-footer__links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ga-space-2);
+}
+
+.ga-footer__links a {
+  color: #DCE8DD;
+  text-decoration: none;
+  font-size: var(--ga-text-sm);
+}
+
+.ga-footer__links a:hover {
+  color: var(--ga-lime);
+  text-decoration: underline;
+}
+
+.ga-footer__bottom {
+  padding-top: var(--ga-space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--ga-space-4);
+  font-size: var(--ga-text-xs);
+  color: #B8C4BC;
+}
